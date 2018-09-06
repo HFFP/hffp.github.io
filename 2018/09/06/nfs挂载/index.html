@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,nfs," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="just funny">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HFFP Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="之前在弄K8s 容器挂载外部存储卷时，一直提示挂载不上去， 提示 access denied.我这里使用的是阿里的nas，以为他会很智能的，会自动创建文件夹的，然后并不。所以最后的问题是，NAS挂载到服务器后，具体目录还是需要自己去手动创建。那么我就去收到创建吧，但是怎么去创建呢。因为之前也没接触过阿里的NAS，他都提供成一个服务了，还以为能在控制台去创建文件目录之类的，然而还是并不。最后还是只能">
+<meta name="keywords" content="linux,nfs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hfs挂载">
+<meta property="og:url" content="http://yoursite.com/2018/09/06/nfs挂载/index.html">
 <meta property="og:site_name" content="HFFP Blog">
-<meta property="og:description" content="just funny">
+<meta property="og:description" content="之前在弄K8s 容器挂载外部存储卷时，一直提示挂载不上去， 提示 access denied.我这里使用的是阿里的nas，以为他会很智能的，会自动创建文件夹的，然后并不。所以最后的问题是，NAS挂载到服务器后，具体目录还是需要自己去手动创建。那么我就去收到创建吧，但是怎么去创建呢。因为之前也没接触过阿里的NAS，他都提供成一个服务了，还以为能在控制台去创建文件目录之类的，然而还是并不。最后还是只能">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-06T10:13:01.876Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HFFP Blog">
-<meta name="twitter:description" content="just funny">
+<meta name="twitter:title" content="hfs挂载">
+<meta name="twitter:description" content="之前在弄K8s 容器挂载外部存储卷时，一直提示挂载不上去， 提示 access denied.我这里使用的是阿里的nas，以为他会很智能的，会自动创建文件夹的，然后并不。所以最后的问题是，NAS挂载到服务器后，具体目录还是需要自己去手动创建。那么我就去收到创建吧，但是怎么去创建呢。因为之前也没接触过阿里的NAS，他都提供成一个服务了，还以为能在控制台去创建文件目录之类的，然而还是并不。最后还是只能">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/06/nfs挂载/"/>
 
 
 
 
 
-  <title>归档 | HFFP Blog</title>
+  <title>hfs挂载 | HFFP Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,111 +239,172 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 2 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/nfs挂载/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HFFP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HFFP Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/06/nfs挂载/" itemprop="url">
-              
-                <span itemprop="name">hfs挂载</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">hfs挂载</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-06T17:55:00+08:00"
-              content="2018-09-06" >
-          09-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T17:55:00+08:00">
+                2018-09-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/06/TODO/" itemprop="url">
-              
-                <span itemprop="name">TODO</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-06T17:11:52+08:00"
-              content="2018-09-06" >
-          09-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>之前在弄K8s 容器挂载外部存储卷时，一直提示挂载不上去， 提示 access denied.<br>我这里使用的是阿里的nas，以为他会很智能的，会自动创建文件夹的，然后并不。<br>所以最后的问题是，NAS挂载到服务器后，具体目录还是需要自己去手动创建。<br>那么我就去收到创建吧，但是怎么去创建呢。<br>因为之前也没接触过阿里的NAS，他都提供成一个服务了，还以为能在控制台去创建文件目录之类的，然而还是并不。<br>最后还是只能去服务器， 先将nfs 挂载到服务器，再创建你想要的文件目录，再去挂载你对应的文件夹</p>
+<p>example：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//将文件存储卷 挂载到服务器的 /mnt 目录下</span><br><span class="line">mount -t nfs host：/ /mnt        </span><br><span class="line">// 进入/mnt目录并新建文件夹</span><br><span class="line">mkdir /test</span><br><span class="line">//挂载成功                     </span><br><span class="line">mount -t nfs host：/test /you_dir_path</span><br></pre></td></tr></table></figure></p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/nfs/" rel="tag"># nfs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/06/TODO/" rel="next" title="TODO">
+                <i class="fa fa-chevron-left"></i> TODO
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +412,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -567,6 +634,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
